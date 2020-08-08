@@ -295,7 +295,7 @@ impl Config {
     pub fn update_caps(&mut self, caps: &ClientCapabilities) {
         if let Some(doc_caps) = caps.text_document.as_ref() {
             if let Some(value) = doc_caps.definition.as_ref().and_then(|it| it.link_support) {
-                self.client_caps.location_link = value;
+                self.client_caps.location_link = false;
             }
             if let Some(value) = doc_caps.folding_range.as_ref().and_then(|it| it.line_folding_only)
             {
